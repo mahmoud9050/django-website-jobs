@@ -1,10 +1,23 @@
 Job :
- - title - location - job type - description - published at - Vacancy - salary - category - experience
+ - title 
+ - location 
+ - job type 
+ - description 
+ - published at 
+ - Vacancy 
+ - salary 
+ - category 
+ - experience
 
 - apply job 
 - post job
 Blog :
- - title - description - created_at - category - tags - author
+ - title 
+ - description 
+ - created_at 
+ - category 
+ - tags 
+  - author
  
 
 - search
@@ -35,7 +48,13 @@ login:
 
 
 
--hou you can uodata your project 'githup'
+-hou you can uodate your project 'githup'
 - git add . 
 - git commit -m "your commit "
 - git push
+
+-relations >
+ - on to many {users - posts} 'foreginkey'
+ - many to many {users - groups} 
+ - one to one {users - profile}
+
