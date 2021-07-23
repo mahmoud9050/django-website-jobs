@@ -35,4 +35,7 @@ login:
 
 
 
--
+-hou you can uodata your project 'githup'
+- git add . 
+- git commit -m "your commit "
+- git push
