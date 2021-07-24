@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap4 %}
 
 {% block contant %}
-
 
 <div class="bradcam_area bradcam_bg_1">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text">
-                    <h3>Add Jop Frome Here</h3>
+                    <h3>Add New Jop Frome Here</h3>
                 </div>
             </div>
         </div>
@@ -23,23 +23,22 @@
           <div class="col-lg-10 mx-auto">
               <div class="job_details_header">
                   <div class="single_jobs white-bg d-flex justify-content-between">
-                      <div class="jobs_left d-flex align-items-center">
-                  <form method="post">
-                    {% csrf_token %}
-
-                    <ul>{{form}}</ul>
-                </form>
+                        <form  method="post" class="col-lg-8 mx-auto">
+                          {% csrf_token %}
+                          {% bootstrap_form form %}
+                          <div class="col-md-12">
+                            <div class="submit_btn">
+                                <button class="boxed-btn3 w-100" type="submit">Post Job</button>
+                            </div>
+                        </div>
+                      
+                      </form>
 
                   
-                  </div>
               </div>
      
 
-                          <div class="col-md-12">
-                              <div class="submit_btn">
-                                  <button class="boxed-btn3 w-100" type="submit">Post Job</button>
-                              </div>
-                          </div>
+                         
                       </div>
                   </form>
               </div>
