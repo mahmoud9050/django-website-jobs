@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from . models import Jobs
+from django.core.paginator import Paginator
+from .form import JobsFormes
 
 # Create your views here.
 def index (request):
@@ -13,8 +15,8 @@ def blog (request):
     return render (request , 'pages/blog.html')
 
 def jobs (request):
+
     job_list =Jobs.objects.all()
-    print(job_list)
     context ={
         'alljobs':job_list
         }
@@ -42,7 +44,12 @@ def elements (request):
 
 
 def post_jop (request):
-    return render (request , 'pages/post-jop.html')
+    if request.method == 'POST':
+        pass
+
+    else:
+        form = JobsFormes ()
+    return render (request , 'pages/post-jop.html',{'form':form})
 
 def login (request):
     return render (request , 'pages/login.html')

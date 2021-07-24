@@ -6,6 +6,7 @@ from django.db import models
 
 from django.db import models
 from django.db.models.fields.files import ImageField
+from django.utils.text import slugify
 
 
 
@@ -14,6 +15,11 @@ class Category(models.Model):
     name =models.CharField(max_length=20)
     def __str__(self) :
         return self.name
+
+def img_uplode(instance,filename):
+    imgname , extension = filename.split(".")
+    return "jobs/%s.%s"%(instance.id,extension)
+
 class Jobs(models.Model):
     lest =[
         ('Full Time','Full Time'),
