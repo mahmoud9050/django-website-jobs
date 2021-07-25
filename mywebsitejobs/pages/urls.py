@@ -14,7 +14,7 @@ urlpatterns = [
     path ('elements' , views.elements , name = 'elements'),
     path ('post_jop' , views.post_jop , name = 'post_jop'),
     path ('login' , views.login , name = 'login'),
-    path ('<slug:slug>' , views.job_details , name = 'job_details'),
+    path ('<str:slug>' , views.job_details , name = 'job_details'),
 
 
    

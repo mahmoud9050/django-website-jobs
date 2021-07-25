@@ -1,3 +1,4 @@
+from enum import unique
 from django.db import models
 
 
@@ -20,7 +21,7 @@ class Category(models.Model):
 def img_uplode(instance,filename):
     imgname , extension = filename.split(".")
     return "jobs/%s.%s"%(instance.id,extension)
-    
+
 class Jobs(models.Model):
     lest =[
         ('Full Time','Full Time'),
@@ -40,7 +41,20 @@ class Jobs(models.Model):
     responsibility = models.CharField(max_length=200,null=True,blank=True)
     qualifications = models.CharField(max_length=200,null=True,blank=True)
     category =models.ForeignKey(Category,on_delete=models.PROTECT,null=True, blank=True)
-    slug =models.CharField(max_length=100, null=True, blank=True)
+    slug =models.SlugField(max_length=400 , null=True, blank=True,unique=True)
+
+
+    def __unicode__(self):
+        return unique(self.title)
+
+
+    def save(self,*args,**kwargs):
+      
+        self.slug = slugify(self.title ,allow_unicode=True)
+        super(Jobs,self).save(*args,**kwargs)
+
+
+
 
     def __str__(self) :
         return self.title
