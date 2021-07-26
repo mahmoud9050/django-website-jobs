@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+
+{% block contant %}
+
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>Logged out</h3>
+                    <p></p>
+                  <h5><a href="{% url 'login'%}">Click here to login again.</a></h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+{% endblock %}

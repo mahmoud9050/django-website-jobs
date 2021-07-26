@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block contant %}
+
+
+
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <img  width="200px"  height="200px" src="{{profile.imeg.url}}" alt=""  >
+
+                   
+                    <h3 >Welcome: {{profile.user.first_name}}</h3>
+                    <h4></h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+<p> </p>
+<form  method="POST" enctype="multipart/form-data" class="col-lg-6 mx-auto">
+    {% csrf_token %}
+    {% bootstrap_form userform %}
+    {% bootstrap_form profileform %}
+       <div class="col-md-12">
+      <div class="submit_btn">
+
+        
+ 
+        <button class="boxed-btn3 w-100" type="submit">Save</button>
+
+      </div>
+  </div>
+
+</form>
+<p></p>
+{% endblock %}

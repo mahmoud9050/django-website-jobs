@@ -35,7 +35,8 @@ def job_details (request,slug):
             myform =form.save(commit=False)
             myform.job_name=job_id
             myform.save()
-            return redirect(reverse('jobs' ))
+            return redirect(reverse('jobs:jobs' ))
+            
     
     else:
         form = ApplyForm()
@@ -52,7 +53,7 @@ def post_jop (request):
         if form.is_valid():
             myform = form.save(commit=True)
             myform.save()
-            return redirect(reverse('jobs/' ))
+            return redirect(reverse('jobs:jobs' ))
 
     else:
         form = JobsFormes ()

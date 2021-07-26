@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['192.168.1.8']
 
 INSTALLED_APPS = [
     'all_jobs',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
