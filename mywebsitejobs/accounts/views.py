@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from .form import SignUpForm ,UesrForm ,ProfileForm
-from .models import Profile , Profile
+from .models import Profile 
 from django.urls import reverse
 # Create your views here.
 

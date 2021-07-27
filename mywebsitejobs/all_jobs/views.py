@@ -23,7 +23,7 @@ def jobs (request):
 
 
 
-    context ={'alljobs':page_obj,'myfilter': myfilter }
+    context ={'alljobs':page_obj,'myfilter': myfilter ,'job_list':job_list }
 
     return render (request,'jobs.html',context)
 @login_required 

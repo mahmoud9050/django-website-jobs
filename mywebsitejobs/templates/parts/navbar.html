@@ -9,7 +9,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
-                                <a href="index">
+                                <a href="/">
                                     <img src="{% static 'img/logo.png' %}" alt="">
                                 </a>
                             </div>
@@ -22,11 +22,8 @@
                                         <li><a href="{% url 'jobs:jobs' %}">Browse Job</a></li>
                                      
                                         </li>
-                                        <li><a href="{% url 'blog:blog' %}">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="{% url 'blog:blog' %}">blog</a></li>
-                                                <li><a href="{% url 'blog:single-blog' %}">single-blog</a></li>
-                                            </ul>
+                                            <li><a href="{% url 'blog:blog' %}">blog</a></li>
+
                                         </li>
                                         <li><a href="{% url 'contact:contact' %} ">Contact Us</a></li>
 
