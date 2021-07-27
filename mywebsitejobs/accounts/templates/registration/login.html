@@ -11,8 +11,16 @@
                 <div class="bradcam_text">
                     <h3>Login</h3>
                     {% if form.errors %}
-                    <p>Your username and password didn't match. Please try again.</p>
+                    <p style="color:rgb(195, 230, 0);">Your username and password didn't match. Please try again.</p>
                   {% endif %}
+                  {% if next %}
+                  {% if user.is_authenticated %}
+                    <p >Your account doesn't have access to this page. To proceed,
+                    please login with an account that has access.</p>
+                  {% else %}
+                    <p style="color:rgb(243, 14, 14);">Please login to see this page.</p>
+                  {% endif %}
+                {% endif %}
                 </div>
             </div>
         </div>
@@ -22,14 +30,7 @@
 
 
 
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Your account doesn't have access to this page. To proceed,
-      please login with an account that has access.</p>
-    {% else %}
-      <p>Please login to see this page.</p>
-    {% endif %}
-  {% endif %}
+
 
   <form method="post" action="{% url 'login' %}" class="col-lg-6 mx-auto">
     {% csrf_token %}
@@ -37,7 +38,7 @@
     <input class="boxed-btn3 w-100" type="submit" value="login" />
     <input type="hidden" name="next" value="{{ next }}" />
     {# Assumes you setup the password_reset view in your URLconf #}
-    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    <p ><a href="{% url 'password_reset' %}" style="color:rgb(224, 11, 11);">Lost password?</a></p>
   </form>
 
 

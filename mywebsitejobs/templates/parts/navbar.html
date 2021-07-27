@@ -18,24 +18,27 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index">home</a></li>
-                                        <li><a href="jobs">Browse Job</a></li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                        <li><a href="/">home</a></li>
+                                        <li><a href="{% url 'jobs:jobs' %}">Browse Job</a></li>
+                                     
+                                        </li>
+                                        <li><a href="{% url 'blog:blog' %}">blog <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="candidate">Candidates </a></li>
-                                                <li><a href="elements">elements</a></li>
+                                                <li><a href="{% url 'blog:blog' %}">blog</a></li>
+                                                <li><a href="{% url 'blog:single-blog' %}">single-blog</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog">blog</a></li>
-                                                <li><a href="single-blog">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact ">Contact</a></li>
+                                        <li><a href="{% url 'contact:contact' %} ">Contact Us</a></li>
 
-                                        <a class="genric-btn success-border large  circle" href="post_job">Add Job</a>
-                                         <a class="genric-btn success-border large circle" href="/accounts/login/ ">Log in</a>
+                                        <a class="genric-btn success-border large  circle" href="{% url 'jobs:post_job' %}">Add Job</a>
+                                        {% if user.is_authenticated %}
+                                        <a class="genric-btn success-border large circle" href="{% url 'logout' %} ">Log out</a>
+
+                                        {% else %}
+                                        <a class="genric-btn success-border large circle" href="{% url 'login' %} ">Log in</a>
+
+
+                                        {% endif %}
 
                                       
 

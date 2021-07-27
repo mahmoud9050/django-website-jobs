@@ -3,7 +3,8 @@ from django.shortcuts import redirect, render
 from . models import Jobs
 from django.core.paginator import Paginator
 from .form import JobsFormes , ApplyForm
-from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.decorators import login_required
+from .filters import JobsFilter
 
 
 # Create your views here.
@@ -11,6 +12,10 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 def jobs (request):
     job_list =Jobs.objects.all()
+
+        ## filters ===
+    myfilter = JobsFilter (request.GET , queryset=job_list)
+    job_list = myfilter.qs 
     paginator = Paginator(job_list, 5) # Show 25 contacts per page.
 
     page_number = request.GET.get('page')
@@ -18,14 +23,10 @@ def jobs (request):
 
 
 
-
-
-    context ={
-        'alljobs':page_obj
-        }
+    context ={'alljobs':page_obj,'myfilter': myfilter }
 
     return render (request,'jobs.html',context)
-    
+@login_required 
 def job_details (request,slug):
     job_id = Jobs.objects.get(slug=slug)
 
@@ -45,7 +46,7 @@ def job_details (request,slug):
 
     return render (request ,'job_details.html',context )
 
-
+@login_required 
 def post_jop (request):
 
     if request.method == 'POST':

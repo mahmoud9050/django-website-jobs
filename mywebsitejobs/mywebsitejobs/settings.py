@@ -33,15 +33,23 @@ ALLOWED_HOSTS = ['192.168.1.8']
 # Application definition
 
 INSTALLED_APPS = [
-    'all_jobs',
+    
     'accounts',
+ 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #apps
+    'contact',
+    'blog',
+    'home',
+    'all_jobs',
     'bootstrap4',
+    'django_filters',
+
 ]
 
 MIDDLEWARE = [
