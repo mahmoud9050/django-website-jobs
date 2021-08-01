@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'all_jobs',
     'bootstrap4',
     'django_filters',
+    'parts',
 
 ]
 

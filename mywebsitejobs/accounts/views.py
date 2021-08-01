@@ -8,6 +8,7 @@ from django.urls import reverse
 def signup (request):
     if request.method=='POST':
         form = SignUpForm(request.POST)
+
         if form.is_valid():
             form.save()
             username= form.cleaned_data['username']
@@ -15,11 +16,12 @@ def signup (request):
 
             user =authenticate(username=username,password=password )
             login(request, user)
-            return redirect('accounts/profile')
+            return redirect(reverse('accounts:profile'))
 
     else:
         form =SignUpForm()
-    return render(request,'registration/signup.html',{'form':form})
+        form2 =ProfileForm()
+    return render(request,'registration/signup.html',{'form':form, })
 
 def profile(request):
     profile =Profile.objects.get(user=request.user)

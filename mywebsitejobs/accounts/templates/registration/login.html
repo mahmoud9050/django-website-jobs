@@ -18,7 +18,7 @@
                     <p >Your account doesn't have access to this page. To proceed,
                     please login with an account that has access.</p>
                   {% else %}
-                    <p style="color:rgb(243, 14, 14);">Please login to see this page.</p>
+                    <p">Please login to see this page.</p>
                   {% endif %}
                 {% endif %}
                 </div>
@@ -32,14 +32,18 @@
 
 
 
-  <form method="post" action="{% url 'login' %}" class="col-lg-6 mx-auto">
+  <form method="post" action="{% url 'login' %}" class="col-lg-6 mx-auto mt-4">
     {% csrf_token %}
     {% bootstrap_form form %}
     <input class="boxed-btn3 w-100" type="submit" value="login" />
     <input type="hidden" name="next" value="{{ next }}" />
     {# Assumes you setup the password_reset view in your URLconf #}
     <p ><a href="{% url 'password_reset' %}" style="color:rgb(224, 11, 11);">Lost password?</a></p>
+    <h3 style="font-size:25px;color:#06e42b"> <i class="fa fa-sign-in mt-4" aria-hidden="true"></i>
+      You can create an account from here <a style="font-size:30px;color:#1900fb" href="{% url 'accounts:signup'%}"> Sign Up</a></h3>
   </form>
+  <p></p>
+
 
 
 

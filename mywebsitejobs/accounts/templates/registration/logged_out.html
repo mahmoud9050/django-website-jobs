@@ -4,20 +4,24 @@
 
 
 {% block contant %}
-
 <div class="bradcam_area bradcam_bg_1">
     <div class="container">
         <div class="row">
-            <div class="col-xl-12">
-                <div class="bradcam_text">
-                    <h3>Logged out</h3>
-                    <p></p>
-                  <h5><a href="{% url 'login'%}">Click here to login again.</a></h5>
+        <div class="col-xl-10">
+                <div  class="bradcam_text">
+                    <h1  style="font-size:100px;color:#f8f8f8"  >Logged Out</h1>
+                    
+                    <h3 style="font-size:40px;color:#06e42b" >  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        <a href="{% url 'login'%}"  > login </a></h3>
+                    <h3 style="font-size:40px;color:#06e42b"> <i class="fa fa-sign-in mt-4" aria-hidden="true"></i>
+                        <a href="{% url 'accounts:signup'%}"> Sign Up</a></h3>
 
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!--/ bradcam_area  -->
+
 {% endblock %}

@@ -9,7 +9,7 @@ from .filters import JobsFilter
 
 # Create your views here.
 
-
+@login_required 
 def jobs (request):
     job_list =Jobs.objects.all()
 

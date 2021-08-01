@@ -166,10 +166,11 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="single_jobs white-bg d-flex justify-content-between">
                             <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img width="100px"  height="100px" src="{{j.photo.url}}" alt="">
+                                <div class="circular--square  mt-3" >
+                                    <img width="100px"  height="100px" class="circular--square  " src="{{j.photo.url}}" alt="">
+
                                 </div>
-                                <div class="jobs_conetent">
+                                <div class="jobs_conetent ml-2 mt-4">
                                     <a href="jobs/{{ j.slug  }} "><h4>{{j.title}}</h4></a>
                                     <div class="links_locat d-flex align-items-center">
                                         <div class="location">
@@ -182,8 +183,7 @@
                                 </div>
                             </div>
                             <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
+                                <div class="acircular--square  mt-4">
                                     <a href="jobs/{{ j.slug  }} " class="boxed-btn3">Apply Now</a>
                                 </div>
                                 <div class="date">

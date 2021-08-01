@@ -18,7 +18,7 @@
 <!--/ bradcam_area  -->
 <div>
 
-    <form method="post"  class="col-lg-8 mx-auto">
+    <form method="post"  enctype="multipart/form-data"  class="col-lg-8 mx-auto">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input class="boxed-btn3 w-100" type="submit" value="Sign up" />
